@@ -10,9 +10,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
-import static helpers.AttachmentsHelper.attachVideo;
+import static helpers.AttachmentsHelper.*;
 
 
 @Epic("QA.GURU automation course")
@@ -30,6 +28,9 @@ class TestBase {
 
     @AfterEach
     void afterEach() {
+        attachScreenshot("Last screenshot");
+        attachPageSource();
+        attachBrowserConsoleLogs();
         attachVideo();
     }
 }
