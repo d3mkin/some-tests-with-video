@@ -20,16 +20,7 @@ import static com.codeborne.selenide.Selenide.open;
 @Epic("QA.GURU automation course")
 @Story("Google tests with video")
 @Tag("google")
-class GoogleTests {
-
-    @BeforeEach
-    void beforeEach() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true));
-
-        if(System.getProperty("selenoid_url") != null) {
-            Configuration.remote = "http://" + System.getProperty("selenoid_url") + ":4444/wd/hub/";
-        }
-    }
+class GoogleTests extends TestBase {
 
     @Test
     @Description("Google test, we look for wikipedia")
