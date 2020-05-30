@@ -32,25 +32,25 @@ class GoogleTests {
     }
 
     @Test
-    @Description("Google test, we look for lepra")
-    @DisplayName("Successful search for lepra in google")
+    @Description("Google test, we look for wikipedia")
+    @DisplayName("Successful search for wikipedia in google")
     void successfulSearch() {
         open("http://google.com");
 
-        $(byName("q")).val("lepra").pressEnter();
+        $(byName("q")).val("wikipedia").pressEnter();
 
-        $("html").shouldHave(text("World Health Organization"));
+        $("html").shouldHave(text("wikipedia.org"));
     }
 
     @Test
-    @Description("Google test, we look for 2ch, but cant find")
-    @DisplayName("Unsuccessful search for lepra in google")
+    @Description("Google test, we look for wikipedia, but dont want to find")
+    @DisplayName("Unsuccessful search for wikipedia in google")
     void unSuccessfulSearch() {
         open("http://google.com");
 
-        $(byName("q")).val("lepra").pressEnter();
+        $(byName("q")).val("wikipedia").pressEnter();
 
-        $("html").shouldNotHave(text("World Health Organization"));
+        $("html").shouldNotHave(text("wikipedia.org"));
     }
 
 }
