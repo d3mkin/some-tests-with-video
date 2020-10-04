@@ -31,6 +31,7 @@ class GoogleTests extends TestBase {
         $(byName("q")).val("wikipedia").pressEnter();
 
         $("html").shouldHave(text("wikipedia.org"));
+        System.out.println("executed successfulSearch");
     }
 
     @Test
@@ -42,8 +43,9 @@ class GoogleTests extends TestBase {
         $(byName("q")).val("wikipedia").pressEnter();
 
         $("html").shouldNotHave(text("wikipedia.org"));
+        System.out.println("executed unSuccessfulSearch");
     }
     
-    System.out.println("success");
+
 
 }
