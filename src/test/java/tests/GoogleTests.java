@@ -43,5 +43,7 @@ class GoogleTests extends TestBase {
 
         $("html").shouldNotHave(text("wikipedia.org"));
     }
+    
+    System.out.println("success");
 
 }
